@@ -8,4 +8,5 @@ public interface UserService {
     ResponseUser update(RequestUser requestUser);
 
     ResponseUser getUserByName(String name);
+
 }

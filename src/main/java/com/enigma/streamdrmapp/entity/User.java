@@ -24,4 +24,8 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    @OneToOne
+    @JoinColumn(name = "user_credential_id")
+    private UserCredential userCredential;
+
 }

@@ -3,6 +3,8 @@ package com.enigma.streamdrmapp.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,6 +24,6 @@ public class Product {
     @Column(name = "product_description",nullable = false)
     private String description;
 
-    @Column(name="price",nullable = false)
-    private Integer price;
+    @OneToMany(mappedBy = "product")
+    private List<ProductPrice> productPrices;
 }
