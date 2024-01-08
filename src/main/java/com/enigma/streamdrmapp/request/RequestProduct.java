@@ -1,5 +1,6 @@
 package com.enigma.streamdrmapp.request;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,12 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder(toBuilder = true)
 public class RequestProduct {
-
-    private String id;
-
+    private String productId;
     private String productName;
-
     private String description;
-
-    private Integer price;
+    private Long price;
 }

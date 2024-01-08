@@ -1,6 +1,6 @@
 package com.enigma.streamdrmapp.response;
 
-import jakarta.persistence.Column;
+import com.enigma.streamdrmapp.entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,9 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class ResponseUser {
+public class ResponseProductPrice {
     private String id;
-    private String userName;
-    private String phoneNumber;
-    private String email;
+    private String productName;
+    private Boolean isActive;
 }

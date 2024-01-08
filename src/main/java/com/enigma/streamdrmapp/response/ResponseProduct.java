@@ -1,5 +1,6 @@
 package com.enigma.streamdrmapp.response;
 
+import com.enigma.streamdrmapp.entity.ProductPrice;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -22,4 +25,5 @@ public class ResponseProduct {
     private String description;
 
     private Integer price;
+    private List<ProductPrice> priceList;
 }

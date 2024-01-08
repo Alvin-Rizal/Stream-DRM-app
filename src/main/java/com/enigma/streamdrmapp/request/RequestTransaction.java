@@ -5,14 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class RequestUser {
-    private String id;
-    private String name;
-    private String email;
-    private String phoneNumber;
-
+public class RequestTransaction {
+    private String userId;
+    private List<RequestTransactionDetail> transactionDetails;
 }

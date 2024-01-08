@@ -1,24 +1,29 @@
 package com.enigma.streamdrmapp.service.impl;
 
 import com.enigma.streamdrmapp.entity.ProductPrice;
+import com.enigma.streamdrmapp.repository.ProductPriceRepository;
+import com.enigma.streamdrmapp.response.ResponseProductPrice;
 import com.enigma.streamdrmapp.service.ProductPriceService;
-import com.enigma.streamdrmapp.service.ProductService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class ProductPriceServiceImpl implements ProductPriceService {
+    private final ProductPriceRepository productPriceRepository;
+
     @Override
-    public ProductPrice create(ProductPrice productPrice) {
+    public ResponseProductPrice createProductPrice(ProductPrice productPrice) {
         return null;
     }
 
     @Override
-    public ProductPrice getById(String id) {
+    public ResponseProductPrice getPriceById(String id) {
         return null;
     }
 
     @Override
-    public ProductPrice findProductIsActive(String productId, Boolean isActive) {
+    public ResponseProductPrice findPriceByIdAndIsActive(String productId, Boolean isActive) {
         return null;
     }
 }

@@ -1,5 +1,6 @@
 package com.enigma.streamdrmapp.service.impl;
 
+import com.enigma.streamdrmapp.entity.Product;
 import com.enigma.streamdrmapp.request.RequestProduct;
 import com.enigma.streamdrmapp.response.ResponseProduct;
 import com.enigma.streamdrmapp.service.ProductService;
@@ -32,5 +33,13 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteProduct(String name) {
 
+    }
+
+    private ResponseProduct responseProduct(Product product) {
+        ResponseProduct responseProduct = new ResponseProduct();
+        responseProduct.setProductName(product.getProductName());
+        responseProduct.setId(product.getId());
+        responseProduct.setDescription(product.getDescription());
+        return responseProduct;
     }
 }

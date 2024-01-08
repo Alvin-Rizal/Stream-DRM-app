@@ -1,11 +1,15 @@
 package com.enigma.streamdrmapp.service;
 
+
 import com.enigma.streamdrmapp.entity.ProductPrice;
+import com.enigma.streamdrmapp.response.ResponseProductPrice;
 
 public interface ProductPriceService {
-    ProductPrice create(ProductPrice productPrice);
 
-    ProductPrice getById(String id);
 
-    ProductPrice findProductIsActive(String productId, Boolean isActive);
+    ResponseProductPrice createProductPrice(ProductPrice productPrice);
+
+    ResponseProductPrice getPriceById(String id);
+
+    ResponseProductPrice findPriceByIdAndIsActive(String productId, Boolean isActive);
 }

@@ -1,7 +1,10 @@
 package com.enigma.streamdrmapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,9 +20,11 @@ public class Transaction {
     private String id;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
-    @ManyToOne
-    private Product product;
+    @OneToMany(mappedBy = "transaction",cascade = CascadeType.PERSIST)
+    private List<TransactionDetail> transactionDetailList;
 
 }

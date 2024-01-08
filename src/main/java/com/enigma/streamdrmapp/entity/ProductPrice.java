@@ -1,5 +1,6 @@
 package com.enigma.streamdrmapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,10 +17,14 @@ public class ProductPrice {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
-
     @Column(name = "is_actice")
     private Boolean isActive;
+
+    @Column(name = "price")
+    private Long price;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    @JsonBackReference
+    private Product product;
 }
